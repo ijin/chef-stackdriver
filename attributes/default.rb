@@ -20,3 +20,7 @@ when 'ubuntu'
     default[:stackdriver][:config_path] = '/etc/default/stackdriver-agent'
   end
 end
+
+default[:stackdriver][:nginx][:status_url] = 'http://localhost/nginx_status'
+default[:stackdriver][:nginx][:user] = nil
+default[:stackdriver][:nginx][:password] = nil
