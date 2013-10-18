@@ -28,6 +28,7 @@ when 'ubuntu'
 end
 
 template '/opt/stackdriver/collectd/etc/collectd.d/redis.conf' do
+  mode 0644
   variables ({
     :nodename => node[:stackdriver][:redis][:nodename],
     :host => node[:stackdriver][:redis][:host],

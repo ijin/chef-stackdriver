@@ -21,6 +21,7 @@
 include_recipe 'stackdriver'
 
 template '/opt/stackdriver/collectd/etc/collectd.d/nginx.conf' do
+  mode 0644
   variables ({
     :url => node[:stackdriver][:nginx][:status_url],
     :user => node[:stackdriver][:nginx][:user],
