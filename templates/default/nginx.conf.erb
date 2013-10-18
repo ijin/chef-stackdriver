@@ -1,0 +1,15 @@
+# Managed by Chef.  Changes will be overwritten.
+
+LoadPlugin "nginx"
+<Plugin "nginx">
+  URL "<%= @url %>"
+#  If you restricted access to your stats, you can
+#  set the username and password here
+<% if @user %>
+  User "<%= @user %>"
+  Password "<%= @pass %>"
+<% else %>
+#  User "stats"
+#  #  Password ""
+<% end %>
+</Plugin>

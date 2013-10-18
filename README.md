@@ -12,16 +12,31 @@ add stackdriver::default to your run list.
 
 # Attributes
 
-repo_url - location of the package repository.
-api_key - set the api key from your stackdriver account.
-config_collectd - should stackdriver handle collectd.conf autogeneration.  Default is true.
+- `repo_url` - location of the package repository.
+- `api_key` - set the api key from your stackdriver account.
+- `config_collectd` - should stackdriver handle collectd.conf autogeneration.  Default is true.
+
+## Plugin Attributes
+
+- `node[:stackdriver][:nginx][:repo_url]` - nginx stub status url. default: http://localhost/nginx_status
+- `node[:stackdriver][:nginx][:user]` - nginx stub status username. default: nil
+- `node[:stackdriver][:nginx][:password]` - nginx stub status password. default: nil
+
+- `node[:stackdriver][:redis][:nodename]` - redis node name. default: "mynode"
+- `node[:stackdriver][:redis][:host]` - redis hostname. default: "localhost"
+- `node[:stackdriver][:redis][:port]` - redis port. default: 6379
+- `node[:stackdriver][:redis][:timeout]` - redis timeout. default: 2000
 
 # Recipes
 
-stackdriver::default - sets up the repository and installs the stackdriver agent.
+- stackdriver::default - sets up the repository and installs the stackdriver agent.
+- stackdriver::nginx - installs the stackdriver nginx plugin
+- stackdriver::redis - installs the stackdriver redis plugin
 
 # Author
 
 Author:: TABLE XI (<sysadmins@tablexi.com>)
 
 Author:: Kevin Reedy (<kevin@bellycard.com>)
+
+Author:: Michael H. Oshita (<ijinpublic+github@gmail.com>)

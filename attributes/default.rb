@@ -20,3 +20,13 @@ when 'ubuntu'
     default[:stackdriver][:config_path] = '/etc/default/stackdriver-agent'
   end
 end
+
+default[:stackdriver][:nginx][:status_url] = 'http://localhost/nginx_status'
+default[:stackdriver][:nginx][:user] = nil
+default[:stackdriver][:nginx][:password] = nil
+
+default[:stackdriver][:redis][:nodename] = "mynode"
+default[:stackdriver][:redis][:host] = "localhost"
+default[:stackdriver][:redis][:port] = 6379
+default[:stackdriver][:redis][:timeout] = 2000
+
